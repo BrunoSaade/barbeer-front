@@ -6,7 +6,7 @@ VContainer.home.bg-primary-0.h-screen.max-w-full(class="md:flex md:items-center 
         src="../assets/Logo.svg",
       )
     .home--inputs
-      p.text-4xl.text-orange-0.font-bold.mb-7 Faça seu login
+      p.text-3xl.text-orange-0.font-bold.mb-7.hidden(class="md:block lg:text-4xl") Faça seu login
       VInput(placeholder="Email").mt-2
       VInput(
         placeholder="Senha"
