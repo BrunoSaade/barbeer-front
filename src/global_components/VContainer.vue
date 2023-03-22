@@ -1,5 +1,5 @@
 <template lang="pug">
-.container.max-w-full.px-8.pt-4.text-center
+.container.px-8.pt-4.text-center
   slot
 </template>
 <script>

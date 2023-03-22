@@ -1,19 +1,23 @@
 <template lang="pug">
-VContainer.home.bg-primary-0.h-screen
-  .home--logo
-    img(src="../assets/Logo.svg")
-  .home--inputs
-    VInput(placeholder="Email").mt-2
-    VInput(
-      placeholder="Senha"
-      inputType="password"
-    ).mt-3
-    .block
-      p.mt-2.text-center.text-grey-0
-        a(href="") Esqueceu sua senha?
-      VButton(text="Entrar").bg-orange-0.w-40.mt-10.text-white
-      p.mt-10.text-center.text-grey-0
-        a(href="") Não tem uma conta? Cadastre-se
+VContainer.home.bg-primary-0.h-screen.max-w-full(class="md:flex md:items-center md:justify-around")
+  VContainer(class="md:flex md:items-center md:justify-around md:max-w-[2008px]")
+    .home--logo
+      img(
+        src="../assets/Logo.svg",
+      )
+    .home--inputs
+      p.text-4xl.text-orange-0.font-bold.mb-7 Faça seu login
+      VInput(placeholder="Email").mt-2
+      VInput(
+        placeholder="Senha"
+        inputType="password"
+      ).mt-3
+      .block
+        p.mt-2.text-center.text-grey-0
+          a(href="") Esqueceu sua senha?
+        VButton(text="Entrar").bg-orange-0.w-40.mt-10.text-white
+        p.mt-10.text-center.text-grey-0
+          a(href="") Não tem uma conta? Cadastre-se
 
 </template>
 <script>
