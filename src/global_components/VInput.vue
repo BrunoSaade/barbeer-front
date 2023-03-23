@@ -1,9 +1,14 @@
 <template lang="pug">
-input(
-  class="h-[40px] placeholder:text-grey-1" 
-  :placeholder="placeholder"
-  :type="inputType"
-).w-full.rounded-full.bg-grey-0.px-4.outline-none
+.vinput--container.relative
+  label(for="").absolute.top-2.left-3(v-if="!!iconName")
+    icon(:icon='iconName')
+  input(
+    :class="[{'pl-8': iconName}, 'h-[40px] placeholder:text-grey-1']" 
+    :placeholder="placeholder"
+    :type="inputType"
+    :id="inputId"
+  ).w-full.rounded-full.bg-grey-0.px-4.outline-none
+  
 </template>
 <script>
   export default{
@@ -15,6 +20,14 @@ input(
       inputType: {
         type: String,
         required: false,
+      },
+      iconName: {
+        type: String,
+        required: false
+      },
+      inputId: {
+        type: String,
+        required: true
       }
     },
     computed: {},
