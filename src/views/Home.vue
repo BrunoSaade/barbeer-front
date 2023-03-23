@@ -1,9 +1,10 @@
 <template lang="pug">
-VContainer.home.bg-primary-0.h-screen.max-w-full(class="md:flex md:items-center md:justify-around")
-  VContainer(class="md:flex md:items-center md:justify-around md:max-w-[2008px]")
+VContainer.home.bg-primary-0.h-screen.max-w-full.place-content-center(class="flex md:items-center md:justify-around")
+  VContainer(class="md:flex md:items-center md:justify-around max-w-[400px] md:max-w-[2008px]")
     .home--logo
       img(
         src="../assets/Logo.svg",
+        class="sm:max-w-[300px] md:max-w-full"
       )
     .home--inputs
       p.text-3xl.text-orange-0.font-bold.mb-7.hidden(class="md:block lg:text-4xl") Faça seu login
