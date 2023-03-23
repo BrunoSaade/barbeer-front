@@ -1,6 +1,6 @@
 <template lang="pug">
 #app.app-container
-  Home
+  router-view
 </template>
 <script>
 import Navbar from './components/Navbar.vue'
