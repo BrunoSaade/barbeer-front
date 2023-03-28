@@ -2,12 +2,15 @@
 VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class="flex md:items-center md:justify-around")
   VContainer(class="md:flex md:items-center md:justify-around max-w-[400px] md:max-w-[2008px]")
     .register--logo.hidden(class="lg:block")
-        img(
-          src="../assets/Logo.svg",
-          class="sm:max-w-[300px] md:max-w-full"
-        )
+      img(
+        src="../assets/Logo.svg",
+        class="sm:max-w-[300px] md:max-w-full"
+      )
     .register--inputs(class="md:w-[500px]")    
-      p.text-3xl.text-orange-0.font-bold.mb-7(class="lg:text-4xl") Faça seu cadastro
+      p.text-3xl.text-orange-0.font-bold.mb-7.hidden(class="lg:text-4xl md:block") Faça seu cadastro
+      .register--arrowBack(@click="handleBack")
+        icon(icon='fa-solid fa-arrow-left')
+        p.ml-3 Voltar
       VInput(
         placeholder="CPF"
         class="mt-2"
@@ -55,10 +58,15 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         inputId="PasswordConfirm"
         inputType="password"
       )#PasswordConfirm
+      p.mt-4.text-center.text-grey-0 Li e concordo com os
+        span
+          a(@click="handleLogin").cursor-pointer.m-1.font-bold Termos de Uso
       VButton(
         text="Cadastrar"
         class="md:w-6/12"
       ).w-40.mt-10.text-white.disable
+      p.mt-4.text-center.text-grey-0.cursor-pointer
+        a(@click="handleLogin") Já possuí uma conta? Faça login
 
 </template>
 <script>
@@ -70,7 +78,14 @@ import VButton from '../global_components/VButton.vue'
         return {};
     },
     computed: {},
-    methods: {},
+    methods: {
+      handleLogin(){
+        this.$router.push('/')
+      },
+      handleBack(){
+        this.$router.push('/')
+      }
+    },
     components: {
       VContainer, 
       VInput,
@@ -79,5 +94,10 @@ import VButton from '../global_components/VButton.vue'
 }
 </script>
 <style scoped>
+.register--arrowBack {
+  @apply flex text-xl text-left items-center text-grey-0 mb-5 md:hidden;
+}
 </style>
   
+
+
