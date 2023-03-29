@@ -15,27 +15,31 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         placeholder="CPF"
         class="mt-2"
         inputId="CPF"
-        
+        @value="cpf"
       )#CPF
       VInput(
         placeholder="Nome"
         class="mt-2"
         inputId="Name"
+        @value="name"
       )#Name
       VInput(
         placeholder="Sobrenome"
         class="mt-2"
         inputId="Surname"
+        @value="surname"
       )#Surname
       VInput(
         placeholder="Data de nascimento"
         class="mt-2"
         inputId="DOB"
+        @value="dob"
       )#DOB
       VInput(
         placeholder="E-mail"
         class="mt-2"
         inputId="Email"
+        @value="email"
       )#Email
       VInput(
         placeholder="Confirme o E-mail"
@@ -46,12 +50,14 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         placeholder="Telefone"
         class="mt-2"
         inputId="Phone"
+        @value="phone"
       )#Phone
       VInput(
         placeholder="Senha"
         class="mt-2"
         inputId="Password"
         inputType="password"
+        @value="password"
       )#Password
       VInput(
         placeholder="Confirme sua senha"
@@ -81,24 +87,50 @@ import VButton from '../global_components/VButton.vue'
         return {};
     },
     mounted() {
-      this.SET_CPF("222")
-      console.log(this.GET_CPF)
+      // console.log(this.getCpf)
     },
     computed: {
       ...mapGetters([
-        'GET_CPF'
+        'getCpf'
       ]),
     },
     methods: {
       ...mapActions([
-        "SET_CPF"
+        "setCpf",
+        "setName",
+        "setSurname",
+        "setDob",
+        "setEmail",
+        "setPhone",
+        "setPassword"
       ]),
+      cpf(value) {
+        this.setCpf(value)
+      },
+      name(value) {
+        this.setName(value)
+      },
+      surname(value) {
+        this.setSurname(value)
+      },
+      dob(value) {
+        this.setDob(value)
+      },
+      email(value) {
+        this.setEmail(value)
+      },
+      phone(value) {
+        this.setPhone(value)
+      },
+      password(value) {
+        this.setPassword(value)
+      },
       handleLogin(){
         this.$router.push('/')
       },
       handleBack(){
         this.$router.push('/')
-      }
+      },
     },
     components: {
       VContainer, 
