@@ -9,6 +9,7 @@
     :id="inputId"
     @input="emitValue"
     v-model="content"
+    v-mask="vmask"
   ).w-full.rounded-full.bg-grey-0.px-4.outline-none
   
 </template>
@@ -32,7 +33,11 @@
       inputId: {
         type: String,
         required: true
-      }
+      },
+      vmask: {
+        type: String,
+        required: false
+      },
     },
     computed: {},
     methods: {

@@ -16,6 +16,7 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         class="mt-2"
         inputId="CPF"
         @value="cpf"
+        vmask="000.000.000-00"
       )#CPF
       VInput(
         placeholder="Nome"
@@ -34,6 +35,7 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         class="mt-2"
         inputId="DOB"
         @value="dob"
+        vmask="00/00/0000"
       )#DOB
       VInput(
         placeholder="E-mail"
@@ -51,6 +53,7 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         class="mt-2"
         inputId="Phone"
         @value="phone"
+        vmask="(00) 00000-0000"
       )#Phone
       VInput(
         placeholder="Senha"
