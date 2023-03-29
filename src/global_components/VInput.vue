@@ -7,13 +7,17 @@
     :placeholder="placeholder"
     :type="inputType"
     :id="inputId"
+    @input="emitValue"
+    v-model="content"
   ).w-full.rounded-full.bg-grey-0.px-4.outline-none
   
 </template>
 <script>
   export default{
     data() {
-      return {};
+      return {
+        content: ""
+      };
     },
     props: {
       placeholder: String,
@@ -31,7 +35,11 @@
       }
     },
     computed: {},
-    methods: {},
+    methods: {
+      emitValue() {
+        this.$emit('value', this.content)
+      }
+    },
   }
 </script>
 <style scoped>
