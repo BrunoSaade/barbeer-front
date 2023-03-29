@@ -15,6 +15,7 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         placeholder="CPF"
         class="mt-2"
         inputId="CPF"
+        
       )#CPF
       VInput(
         placeholder="Nome"
@@ -70,6 +71,8 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
 
 </template>
 <script>
+import { mapState, mapGetters, mapActions } from 'vuex'
+
 import VContainer from '../global_components/VContainer.vue'
 import VInput from '../global_components/VInput.vue'
 import VButton from '../global_components/VButton.vue'
@@ -77,8 +80,19 @@ import VButton from '../global_components/VButton.vue'
     data() {
         return {};
     },
-    computed: {},
+    mounted() {
+      this.SET_CPF("222")
+      console.log(this.GET_CPF)
+    },
+    computed: {
+      ...mapGetters([
+        'GET_CPF'
+      ]),
+    },
     methods: {
+      ...mapActions([
+        "SET_CPF"
+      ]),
       handleLogin(){
         this.$router.push('/')
       },

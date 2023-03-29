@@ -1,3 +1,11 @@
 export default {
-    title: "Lalala",
+    user: {
+        cpf: "",
+        name: "",
+        surname: "",
+        dob: "",
+        email: "",
+        phone: "",
+        password: ""
+    }
 }
