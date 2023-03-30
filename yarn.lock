@@ -28,7 +28,7 @@
 
 "@devindex/vue-mask@^2.0.3":
   version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@devindex/vue-mask/-/vue-mask-2.0.3.tgz#062f9bd642bae28ce0bd9dd98463b6bdd5d158d7"
+  resolved "https://registry.npmjs.org/@devindex/vue-mask/-/vue-mask-2.0.3.tgz"
   integrity sha512-zOVSHVhuV4NkCVTDsyInmBWNS1JvrwevU2QguNzXxe0DDowNp+3MCkVGYdmJtpZ63wRHFiU3YTQsBjCJBOYN2A==
 
 "@esbuild/android-arm@0.15.12":
