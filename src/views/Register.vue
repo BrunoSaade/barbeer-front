@@ -1,4 +1,8 @@
 <template lang="pug">
+VModal(
+  :class="[{'hidden': !mustShowModal}]" 
+  @closeModal="mustShowModal = !mustShowModal"
+)  
 VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class="flex md:items-center md:justify-around")
   VContainer(class="md:flex md:items-center md:justify-around max-w-[400px] md:max-w-[2008px]")
     .register--logo.hidden(class="lg:block")
@@ -70,7 +74,7 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
       )#PasswordConfirm
       p.mt-4.text-center.text-grey-0 Li e concordo com os
         span
-          a(@click="handleLogin").cursor-pointer.m-1.font-bold Termos de Uso
+          a(@click="mustShowModal = !mustShowModal").cursor-pointer.m-1.font-bold Termos de Uso
       VButton(
         text="Cadastrar"
         class="md:w-6/12"
@@ -85,13 +89,14 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 import VContainer from '../global_components/VContainer.vue'
 import VInput from '../global_components/VInput.vue'
 import VButton from '../global_components/VButton.vue'
+import VModal from '../global_components/VModal.vue'
   export default{
     data() {
-        return {};
+        return {
+          mustShowModal: false,
+        };
     },
-    mounted() {
-      // console.log(this.getCpf)
-    },
+    mounted() {},
     computed: {
       ...mapGetters([
         'getCpf'
@@ -134,11 +139,15 @@ import VButton from '../global_components/VButton.vue'
       handleBack(){
         this.$router.push('/')
       },
+      test() {
+        console.log(8)
+      }
     },
     components: {
       VContainer, 
       VInput,
-      VButton
+      VButton,
+      VModal
     }
 }
 </script>
