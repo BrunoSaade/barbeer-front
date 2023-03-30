@@ -58,7 +58,6 @@
     computed: {},
     methods: {
       emitCloseModal() {
-        console.log(11)
         this.$emit('closeModal')
       }
     },

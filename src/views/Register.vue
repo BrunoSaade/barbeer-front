@@ -139,9 +139,6 @@ import VModal from '../global_components/VModal.vue'
       handleBack(){
         this.$router.push('/')
       },
-      test() {
-        console.log(8)
-      }
     },
     components: {
       VContainer, 
