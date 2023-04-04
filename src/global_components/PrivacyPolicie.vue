@@ -52,21 +52,6 @@
   }
 </script>
 <style scoped>
-  .vmodal--background {
-    @apply w-full h-full bg-black fixed z-40 opacity-80;
-  }
-  .vmodal--panel {
-    @apply bg-white w-full z-50 fixed bottom-0 rounded-t-2xl h-5/6 pb-10;
-  }
-  .vmodal--icon-row {
-    @apply  w-full text-right;
-  }
-  .vmodal--icon {
-    @apply text-4xl cursor-pointer pr-4 pt-4;
-  }
-  .vmodal--content {
-    @apply p-8 overflow-scroll h-full;
-  }
   .privacy-police--content {
     @apply font-bold;
   }
