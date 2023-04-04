@@ -29,7 +29,8 @@
     @apply w-full h-full bg-black fixed z-40 opacity-80;
   }
   .vmodal--panel {
-    @apply bg-white w-full z-50 fixed bottom-0 rounded-t-2xl h-5/6 pb-10;
+    @apply bg-white w-full z-50 fixed bottom-0 overflow-hidden rounded-t-2xl h-5/6 pb-10 
+    md:max-w-[580px] md:max-h-[400px] md:inset-0 md:rounded-2xl md:m-auto;
   }
   .vmodal--icon-row {
     @apply  w-full text-right;
