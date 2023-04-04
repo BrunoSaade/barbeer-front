@@ -2,7 +2,8 @@
 VModal(
   :class="[{'hidden': !mustShowModal}]" 
   @closeModal="mustShowModal = !mustShowModal"
-)  
+)
+  PrivacyPolicie
 VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class="flex md:items-center md:justify-around")
   VContainer(class="md:flex md:items-center md:justify-around max-w-[400px] md:max-w-[2008px]")
     .register--logo.hidden(class="lg:block")
@@ -90,6 +91,7 @@ import VContainer from '../global_components/VContainer.vue'
 import VInput from '../global_components/VInput.vue'
 import VButton from '../global_components/VButton.vue'
 import VModal from '../global_components/VModal.vue'
+import PrivacyPolicie from '../global_components/PrivacyPolicie.vue'
   export default{
     data() {
         return {
@@ -144,7 +146,8 @@ import VModal from '../global_components/VModal.vue'
       VContainer, 
       VInput,
       VButton,
-      VModal
+      VModal,
+      PrivacyPolicie
     }
 }
 </script>
