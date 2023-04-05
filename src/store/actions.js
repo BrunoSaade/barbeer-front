@@ -25,3 +25,7 @@ export function setPhone({commit}, value) {
 export function setPassword({commit}, value) {
     commit("setPassword", value)
 }
+
+export function setIsLogged({commit}, value) {
+    commit("setIsLogged", value)
+}

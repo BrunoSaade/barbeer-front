@@ -25,3 +25,7 @@ export function setPhone(state, value) {
 export function setPassword(state, value) {
     state.userRegister.password = value;
 }
+
+export function setIsLogged(state, value) {
+    state.isLogged = value;
+}
