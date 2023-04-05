@@ -22,7 +22,10 @@ VContainer.home.bg-primary-0.h-screen.max-w-full.place-content-center(class="fle
       .block
         p.mt-2.text-center.text-grey-0
           a(href="") Esqueceu sua senha?
-        VButton(text="Entrar").bg-orange-0.w-40.mt-10.text-white
+        VButton(
+          @click="handleLogin" 
+          text="Entrar"
+        ).bg-orange-0.w-40.mt-10.text-white
         p.mt-10.text-center.text-grey-0.cursor-pointer
           a(@click="handleRegister") Não tem uma conta? Cadastre-se
 
@@ -39,6 +42,9 @@ import VButton from '../global_components/VButton.vue'
     methods: {
       handleRegister() {
         this.$router.push('/register')
+      },
+      handleLogin() {
+        this.$router.push('/logged/main')
       }
     },
     components: {
