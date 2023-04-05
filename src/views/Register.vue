@@ -73,9 +73,10 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         inputId="PasswordConfirm"
         inputType="password"
       )#PasswordConfirm
-      p.mt-4.text-center.text-grey-0 Li e concordo com os
-        span
-          a(@click="mustShowModal = !mustShowModal").cursor-pointer.m-1.font-bold Termos de Uso
+      VCheckBox.mt-4
+        p.text-center.text-grey-0 Li e concordo com os
+          span
+            a(@click="mustShowModal = !mustShowModal").cursor-pointer.m-1.font-bold Termos de Uso
       VButton(
         text="Cadastrar"
         class="md:w-6/12"
@@ -91,6 +92,7 @@ import VContainer from '../global_components/VContainer.vue'
 import VInput from '../global_components/VInput.vue'
 import VButton from '../global_components/VButton.vue'
 import VModal from '../global_components/VModal.vue'
+import VCheckBox from '../global_components/VCheckBox.vue'
 import PrivacyPolicie from '../global_components/PrivacyPolicie.vue'
   export default{
     data() {
@@ -147,7 +149,8 @@ import PrivacyPolicie from '../global_components/PrivacyPolicie.vue'
       VInput,
       VButton,
       VModal,
-      PrivacyPolicie
+      PrivacyPolicie,
+      VCheckBox
     }
 }
 </script>
