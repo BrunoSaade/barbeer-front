@@ -31,6 +31,8 @@ VContainer.home.bg-primary-0.h-screen.max-w-full.place-content-center(class="fle
 
 </template>
 <script>
+import { mapState, mapGetters, mapActions } from 'vuex'
+
 import VContainer from '../global_components/VContainer.vue'
 import VInput from '../global_components/VInput.vue'
 import VButton from '../global_components/VButton.vue'
@@ -38,8 +40,14 @@ import VButton from '../global_components/VButton.vue'
     data() {
         return {};
     },
+    mounted() {
+      this.setIsLogged(false)
+    },
     computed: {},
     methods: {
+      ...mapActions([
+        'setIsLogged'
+      ]),
       handleRegister() {
         this.$router.push('/register')
       },

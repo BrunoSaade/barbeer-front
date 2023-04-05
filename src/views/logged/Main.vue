@@ -7,63 +7,23 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
 import { mapState, mapGetters, mapActions } from 'vuex'
 
 import VContainer from '../../global_components/VContainer.vue'
-import VInput from '../../global_components/VInput.vue'
-import VButton from '../../global_components/VButton.vue'
-import VCheckBox from '../../global_components/VCheckBox.vue'
-  export default{
-    data() {
-        return {};
-    },
-    mounted() {},
-    computed: {
-      ...mapGetters([
-        'getCpf'
-      ]),
-    },
-    methods: {
-      ...mapActions([
-        "setCpf",
-        "setName",
-        "setSurname",
-        "setDob",
-        "setEmail",
-        "setPhone",
-        "setPassword"
-      ]),
-      cpf(value) {
-        this.setCpf(value)
-      },
-      name(value) {
-        this.setName(value)
-      },
-      surname(value) {
-        this.setSurname(value)
-      },
-      dob(value) {
-        this.setDob(value)
-      },
-      email(value) {
-        this.setEmail(value)
-      },
-      phone(value) {
-        this.setPhone(value)
-      },
-      password(value) {
-        this.setPassword(value)
-      },
-      handleLogin(){
-        this.$router.push('/')
-      },
-      handleBack(){
-        this.$router.push('/')
-      },
-    },
-    components: {
-      VContainer, 
-      VInput,
-      VButton,
-      VCheckBox
-    }
+
+export default{
+  data() {
+      return {};
+  },
+  mounted() {
+    this.setIsLogged(true)
+  },
+  computed: {},
+  methods: {
+    ...mapActions([
+      'setIsLogged'
+    ]),
+  },
+  components: {
+    VContainer
+  }
 }
 </script>
 <style scoped>
