@@ -5,6 +5,10 @@
     .navbar--mobile-menu
       .navbar--mobile-arrowBack(@click="handleMenuMobileOpen")
         icon(icon='fa-solid fa-arrow-left')
+      .navbar--mobile-avatar 
+        img(
+          :src="`https://ui-avatars.com/api/?name=${name}&background=17241D&color=FFFFFFBF&rounded=true&size=200`"
+        )
       .navbar--mobile-container
         .navbar--mobile-content
           .navbar--mobile-content-action
@@ -30,8 +34,19 @@
     },
     computed: {
       ...mapGetters([
-        'getIsMenuMobileOpen'
+        'getIsMenuMobileOpen',
+        'getUserCompleteName'
       ]),
+      name() {
+        const userName = this.getUserCompleteName
+        const groupNames = userName.split(" ")
+        if (groupNames?.length > 1) {
+          const [name] = groupNames
+          const [surname] = groupNames?.reverse()
+          return `${name} ${surname}`
+        }
+        return groupNames?.[0]
+      }
     },
     methods: {
       ...mapActions([
@@ -66,10 +81,13 @@ p {
   @apply text-xl text-grey-0;
 }
 .navbar--mobile-container {
-  @apply flex justify-center h-full;
+  @apply flex h-2/4;
 }
 .navbar--mobile-content {
   @apply w-full self-center;
+}
+.navbar--mobile-avatar {
+  @apply flex justify-center mt-20;
 }
 </style>
   
