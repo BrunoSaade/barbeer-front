@@ -30,3 +30,7 @@ export function getIsMenuMobileOpen(state) {
     return state.isMenuMobileOpen;
 }
 
+export function getUserCompleteName(state) {
+    return state.userRegister.name + " " + state.userRegister.surname;
+}
+
