@@ -5,6 +5,17 @@
     .navbar--mobile-menu
       .navbar--mobile-arrowBack(@click="handleMenuMobileOpen")
         icon(icon='fa-solid fa-arrow-left')
+      .navbar--mobile-container
+        .navbar--mobile-content
+          .navbar--mobile-content-action
+            icon.icon--action(icon='fa-solid fa-pen')
+            p Perfil
+          .navbar--mobile-content-action
+            icon.icon--action(icon='fa-solid fa-book') 
+            p Agendamentos
+          .navbar--mobile-content-action(@click="handleLogout")
+            icon.icon--action(icon='fa-solid fa-right-from-bracket') 
+            p Sair
 </template>
 <script>
   import { mapState, mapGetters, mapActions } from 'vuex'
@@ -14,6 +25,9 @@
       return {};
     },
     props: {},
+    mounted() {
+      this.setIsMenuMobileOpen(false)
+    },
     computed: {
       ...mapGetters([
         'getIsMenuMobileOpen'
@@ -25,6 +39,9 @@
       ]),
       handleMenuMobileOpen() {
         this.setIsMenuMobileOpen(false)
+      },
+      handleLogout() {
+        this.$router.push('/')
       }
     },
   }
@@ -34,10 +51,25 @@
   @apply w-full h-full bg-black fixed z-40 opacity-80;
 }
 .navbar--mobile-menu {
-  @apply w-[88%] bg-orange-1 h-screen z-50 fixed p-7;
+  @apply w-[88%] max-w-[991px] bg-orange-1 h-screen z-50 fixed p-7 rounded-tr-[50px];
 }
 .navbar--mobile-arrowBack {
   @apply flex text-4xl text-left items-center text-grey-0;
+}
+.icon--action {
+  @apply text-2xl text-grey-0;
+}
+.navbar--mobile-content-action {
+  @apply flex items-center mb-6 gap-3;
+}
+p {
+  @apply text-xl text-grey-0;
+}
+.navbar--mobile-container {
+  @apply flex justify-center h-full;
+}
+.navbar--mobile-content {
+  @apply w-full self-center;
 }
 </style>
   
