@@ -1,5 +1,5 @@
 <template lang="pug">
-.container.px-5.pt-4.text-center(class="md:px-8")
+.container.px-5.pt-4(class="md:px-8")
   slot
 </template>
 <script>
