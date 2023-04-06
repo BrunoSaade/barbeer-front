@@ -29,3 +29,7 @@ export function setPassword(state, value) {
 export function setIsLogged(state, value) {
     state.isLogged = value;
 }
+
+export function setIsMenuMobileOpen(state, value) {
+    state.isMenuMobileOpen = value;
+}

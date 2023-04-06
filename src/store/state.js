@@ -1,5 +1,6 @@
 export default {
     isLogged: false,
+    isMenuMobileOpen: false,
     userRegister: {
         cpf: "",
         name: "",

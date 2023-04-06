@@ -21,6 +21,12 @@ export function getEmail(state) {
 export function getPhone(state) {
     return state.userRegister.phone;
 }
+
 export function getIsLogged(state) {
     return state.isLogged;
 }
+
+export function getIsMenuMobileOpen(state) {
+    return state.isMenuMobileOpen;
+}
+

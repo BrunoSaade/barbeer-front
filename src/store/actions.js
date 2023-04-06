@@ -29,3 +29,7 @@ export function setPassword({commit}, value) {
 export function setIsLogged({commit}, value) {
     commit("setIsLogged", value)
 }
+
+export function setIsMenuMobileOpen({commit}, value) {
+    commit("setIsMenuMobileOpen", value)
+}
