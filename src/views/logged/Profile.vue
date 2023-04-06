@@ -11,9 +11,15 @@ export default{
   data() {
       return {};
   },
-  mounted() {},
+  mounted() {
+    this.setIsLogged(true)
+  },
   computed: {},
-  methods: {},
+  methods: {
+    ...mapActions([
+      'setIsLogged',
+    ]),
+  },
   components: {
     VContainer
   }
