@@ -77,10 +77,11 @@ VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class=
         p.text-center.text-grey-0 Li e concordo com os
           span
             a(@click="mustShowModal = !mustShowModal").cursor-pointer.m-1.font-bold Termos de Uso
-      VButton(
-        text="Cadastrar"
-        class="md:w-6/12"
-      ).w-40.mt-10.text-white.disable
+      .register--row-button
+        VButton(
+          text="Cadastrar"
+          class="md:w-6/12"
+        ).w-40.mt-10.text-white.disable
       p.mt-4.text-center.text-grey-0.cursor-pointer
         a(@click="handleLogin") Já possuí uma conta? Faça login
 
@@ -157,6 +158,9 @@ import PrivacyPolicie from '../global_components/PrivacyPolicie.vue'
 <style scoped>
 .register--arrowBack {
   @apply flex text-xl text-left items-center text-grey-0 mb-5 md:hidden;
+}
+.register--row-button {
+  @apply flex justify-center
 }
 </style>
   
