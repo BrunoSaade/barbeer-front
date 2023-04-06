@@ -1,7 +1,11 @@
 <template lang="pug">
-VContainer.register.bg-primary-0.h-screen.max-w-full.place-content-center(class="flex md:items-center md:justify-around")
-  VContainer(class="md:flex md:items-center md:justify-around max-w-[400px] md:max-w-[2008px]")
-    p main
+VContainer.main
+  VContainer.main--sec-container
+    .main--header 
+      icon.main--header-icon(
+        icon='fa-solid fa-bars'
+        @click="handleMenuMobileOpen"
+      )
 </template>
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
@@ -18,8 +22,12 @@ export default{
   computed: {},
   methods: {
     ...mapActions([
-      'setIsLogged'
+      'setIsLogged',
+      'setIsMenuMobileOpen'
     ]),
+    handleMenuMobileOpen() {
+      this.setIsMenuMobileOpen(true)
+    }
   },
   components: {
     VContainer
@@ -27,9 +35,18 @@ export default{
 }
 </script>
 <style scoped>
-.register--arrowBack {
-  @apply flex text-xl text-left items-center text-grey-0 mb-5 md:hidden;
-}
+  .main {
+    @apply bg-primary-0 h-screen max-w-full place-content-center flex md:items-center md:justify-around;
+  }
+  .main--sec-container {
+    @apply md:flex md:items-center md:justify-around max-w-[400px] md:max-w-[2008px];
+  }
+  .main--header {
+    @apply w-full z-40 fixed top-0 left-0 right-0 p-7;
+  }
+  .main--header-icon {
+    @apply text-4xl text-grey-0;
+  }
 </style>
   
 
