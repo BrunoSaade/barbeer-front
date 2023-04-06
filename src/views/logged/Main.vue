@@ -42,7 +42,7 @@ export default{
     @apply md:flex md:items-center md:justify-around max-w-[400px] md:max-w-[2008px];
   }
   .main--header {
-    @apply w-full z-40 fixed top-0 left-0 right-0 p-7;
+    @apply w-full z-30 fixed top-0 left-0 right-0 p-7;
   }
   .main--header-icon {
     @apply text-4xl text-grey-0;
