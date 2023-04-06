@@ -10,9 +10,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUserSecret, faUser, faLock, faArrowLeft, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faUser, faLock, faArrowLeft, faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUserSecret, faUser, faLock, faArrowLeft, faXmark)
+library.add(faUserSecret, faUser, faLock, faArrowLeft, faXmark, faBars)
 
 const router = createRouter({
     history: createWebHistory(),
