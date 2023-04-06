@@ -11,7 +11,10 @@
         )
       .navbar--mobile-container
         .navbar--mobile-content
-          .navbar--mobile-content-action
+          .navbar--mobile-content-action(@click="handleMain")
+            icon.icon--action(icon='fa-solid fa-house')
+            p Início
+          .navbar--mobile-content-action(@click="handleProfile")
             icon.icon--action(icon='fa-solid fa-pen')
             p Perfil
           .navbar--mobile-content-action
@@ -52,12 +55,20 @@
       ...mapActions([
         'setIsMenuMobileOpen'
       ]),
+      handleMain() {
+        this.setIsMenuMobileOpen(false)
+        this.$router.push('/logged/main')
+      },
       handleMenuMobileOpen() {
         this.setIsMenuMobileOpen(false)
       },
       handleLogout() {
         this.$router.push('/')
-      }
+      },
+      handleProfile() {
+        this.setIsMenuMobileOpen(false)
+        this.$router.push('/logged/profile')
+      },
     },
   }
 </script>
