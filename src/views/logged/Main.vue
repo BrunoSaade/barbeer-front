@@ -18,11 +18,7 @@ export default{
   methods: {
     ...mapActions([
       'setIsLogged',
-      'setIsMenuMobileOpen'
     ]),
-    handleMenuMobileOpen() {
-      this.setIsMenuMobileOpen(true)
-    }
   },
   components: {
     VContainer
