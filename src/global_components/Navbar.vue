@@ -1,5 +1,15 @@
 <template lang="pug">
 .navbar
+  .navbar--desktop 
+    .navbar--desktop-avatar 
+      img(
+        :src="`https://ui-avatars.com/api/?name=${name}&background=17241D&color=FFFFFFBF&rounded=true&size=60`"
+      )
+    .navbar--desktop-items  
+      p.navbar--desktop-menu-item(@click="handleMain") Início
+      p.navbar--desktop-menu-item(@click="handleProfile") Perfil 
+      p.navbar--desktop-menu-item Agendamentos
+      p.navbar--desktop-menu-item(@click="handleLogout") Sair
   .navbar--mobile(v-if="getIsMenuMobileOpen")
     .vnavbar--mobile-background(@click="handleMenuMobileOpen")
     .navbar--mobile-menu
@@ -73,6 +83,9 @@
   }
 </script>
 <style scoped>
+.navbar--mobile {
+  @apply md:hidden;
+}
 .vnavbar--mobile-background {
   @apply w-full h-full bg-black fixed z-40 opacity-80;
 }
@@ -100,5 +113,15 @@ p {
 .navbar--mobile-avatar {
   @apply flex justify-center mt-20;
 }
+.navbar--desktop {
+  @apply w-full h-20 bg-orange-1 fixed justify-between px-32 items-center hidden md:flex;
+}
+.navbar--desktop-menu-item {
+  @apply cursor-pointer hover:text-white;
+}
+.navbar--desktop-items {
+  @apply flex gap-12;
+}
+
 </style>
   

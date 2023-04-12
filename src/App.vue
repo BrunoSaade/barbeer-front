@@ -42,7 +42,7 @@ export default{
     color: rgb(113, 42, 42);
   }
   .app-container-logged--header {
-    @apply w-full z-30 fixed top-0 left-0 right-0 p-7;
+    @apply w-full z-30 fixed top-0 left-0 right-0 p-7 md:hidden;
   }
   .app-container-logged--header-icon {
     @apply text-4xl text-grey-0;
