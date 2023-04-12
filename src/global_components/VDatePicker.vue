@@ -17,7 +17,7 @@
       return {
         next30Days: [],
         selectedDate: "",
-        selectedIndex: 1,
+        selectedIndex: 0,
       };
     },
     mounted() {
