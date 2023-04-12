@@ -1,11 +1,13 @@
 <template lang="pug">
 VContainer.main
   VContainer.main--sec-container
+    VDatePicker 
 </template>
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
 
 import VContainer from '../../global_components/VContainer.vue'
+import VDatePicker from '../../global_components/VDatePicker.vue'
 
 export default{
   data() {
@@ -21,13 +23,14 @@ export default{
     ]),
   },
   components: {
-    VContainer
+    VContainer,
+    VDatePicker,
   }
 }
 </script>
 <style scoped>
   .main {
-    @apply bg-primary-0 h-screen max-w-full place-content-center flex md:items-center md:justify-around;
+    @apply bg-primary-0 h-screen max-w-full place-content-center flex items-center md:justify-around;
   }
   .main--sec-container {
     @apply md:flex md:items-center md:justify-around max-w-[400px] md:max-w-[2008px];
