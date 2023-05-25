@@ -67,7 +67,7 @@
   @apply flex overflow-hidden overflow-x-scroll gap-4;
 }
 .vtime-picker--card {
-  @apply bg-grey-2 hover:bg-grey-3 w-[9.5rem] h-12 rounded-lg text-center flex justify-center items-center flex-shrink-0;
+  @apply bg-grey-2 hover:bg-grey-3 w-[9.5rem] h-12 rounded-xl text-center flex justify-center items-center flex-shrink-0;
 }
 .date-picker--text {
   @apply font-bold text-lg;
