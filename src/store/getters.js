@@ -34,3 +34,7 @@ export function getUserCompleteName(state) {
     return state.userRegister.name + " " + state.userRegister.surname;
 }
 
+export function getTurnChoosed(state) {
+    return state.turnChoosed;
+}
+

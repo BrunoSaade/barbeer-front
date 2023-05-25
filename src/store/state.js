@@ -9,5 +9,6 @@ export default {
         email: "",
         phone: "",
         password: ""
-    }
+    },
+    turnChoosed: "morning",
 }

@@ -33,3 +33,7 @@ export function setIsLogged(state, value) {
 export function setIsMenuMobileOpen(state, value) {
     state.isMenuMobileOpen = value;
 }
+
+export function setTurnChoosed(state, value) {
+    state.turnChoosed = value;
+}
