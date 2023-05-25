@@ -29,7 +29,7 @@
       getNext30Days() {
         const weekDays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
         const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-        
+
         const currentDate = new Date();
         
         for (let i = 0; i < 30; i++) {
@@ -65,6 +65,9 @@
 }
 .date-picker--text {
   @apply font-bold text-lg;
+}
+.vdate-picker--row::-webkit-scrollbar{
+  display: none;
 }
 </style>
   
