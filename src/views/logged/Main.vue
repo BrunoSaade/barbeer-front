@@ -22,6 +22,16 @@ VContainer.main
     VTurnPicker.mt-6
     VTimePicker.mt-6
     ScheduleInfo(@onclick="mustShowModal = !mustShowModal").mt-6
+    .flex-col.text-white.text-end.my-5
+      p.text-sm Total
+      p.text-xl R$ 50,00
+      P.text-sm 40min
+    .flex.justify-center
+      VButton(
+          @click="handleBooking"
+          text="Agendar"
+          class="!bg-orange-1"
+        ).w-32.text-white 
 </template>
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
@@ -33,6 +43,7 @@ import VTurnPicker from '../../global_components/VTurnPicker.vue'
 import ScheduleInfo from '../../components/partials/schedule/ScheduleInfo.vue'
 import VModal from '../../global_components/VModal.vue'
 import PrivacyPolicie from '../../global_components/PrivacyPolicie.vue'
+import VButton from '../../global_components/VButton.vue'
 
 export default{
   data() {
@@ -62,6 +73,9 @@ export default{
     ...mapActions([
       'setIsLogged',
     ]),
+    handleBooking() {
+      console.log("Agendar")
+    }
   },
   components: {
     VContainer,
@@ -70,7 +84,8 @@ export default{
     VTurnPicker,
     ScheduleInfo,
     VModal, 
-    PrivacyPolicie
+    PrivacyPolicie,
+    VButton
   }
 }
 </script>
