@@ -3,6 +3,7 @@
   .vmodal--background(@click="emitCloseModal")
   .vmodal--panel
     .vmodal--icon-row
+      p.vmodal--title {{ title }}
       icon.vmodal--icon(
         icon="fa-solid fa-xmark"
         @click="emitCloseModal"
@@ -15,7 +16,13 @@
     data() {
       return {};
     },
-    props: {},
+    props: {
+      title: {
+        type: String,
+        default: "",
+        required: false,
+      },
+    },
     computed: {},
     methods: {
       emitCloseModal() {
@@ -33,16 +40,19 @@
     md:max-w-[580px] md:max-h-[400px] md:inset-0 md:rounded-2xl md:m-auto;
   }
   .vmodal--icon-row {
-    @apply  w-full text-right;
+    @apply  w-full text-right flex justify-between items-center pt-6 px-6;
   }
   .vmodal--icon {
-    @apply text-4xl cursor-pointer pr-4 pt-4;
+    @apply text-4xl cursor-pointer;
   }
   .vmodal--content {
     @apply p-8 overflow-scroll h-full;
   }
   .vmodal--content-topic {
     @apply font-bold;
+  }
+  .vmodal--title {
+    @apply font-bold text-xl;
   }
 </style>
   
