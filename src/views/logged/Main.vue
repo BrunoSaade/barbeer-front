@@ -1,9 +1,27 @@
 <template lang="pug">
+VModal(
+  v-show="mustShowModal"
+  title="Escolha o barbeiro"
+  @closeModal="mustShowModal = !mustShowModal"
+)
+  .vmodal--barber-option(
+    :key="index" 
+    v-for="barber, index in barbers"
+  )
+    img(
+      src="../../assets/defaultBarber.svg" 
+      alt="alt" 
+      class="w-[48px] h-[48px] cursor-pointer"
+    )
+    .vmodal--barber-data
+      p {{ barber.name }}
+      p.text-sm(:class="barber.available ? 'text-success-0' : 'text-error-0'") {{ barber.available ? 'Disponível' : 'O barbeiro tem outros agendamentos no horário selecionado'}}
 VContainer.main
   VContainer.main--sec-container
     VDatePicker 
-    VTurnPicker.mt-4
-    VTimePicker.mt-4
+    VTurnPicker.mt-6
+    VTimePicker.mt-6
+    ScheduleInfo(@onclick="mustShowModal = !mustShowModal").mt-6
 </template>
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
@@ -12,10 +30,29 @@ import VContainer from '../../global_components/VContainer.vue'
 import VDatePicker from '../../global_components/VDatePicker.vue'
 import VTimePicker from '../../global_components/VTimePicker.vue'
 import VTurnPicker from '../../global_components/VTurnPicker.vue'
+import ScheduleInfo from '../../components/partials/schedule/ScheduleInfo.vue'
+import VModal from '../../global_components/VModal.vue'
+import PrivacyPolicie from '../../global_components/PrivacyPolicie.vue'
 
 export default{
   data() {
-      return {};
+      return {
+        mustShowModal: false,
+        barbers: [
+          {
+            name: 'Bruno',
+            available: true,
+          },
+          {
+            name: 'Jose',
+            available: true,
+          },
+          {
+            name: 'Rafael',
+            available: false,
+          },
+        ]
+      };
   },
   mounted() {
     this.setIsLogged(true)
@@ -30,7 +67,10 @@ export default{
     VContainer,
     VDatePicker,
     VTimePicker,
-    VTurnPicker
+    VTurnPicker,
+    ScheduleInfo,
+    VModal, 
+    PrivacyPolicie
   }
 }
 </script>
@@ -39,7 +79,10 @@ export default{
     @apply bg-primary-0 h-screen max-w-full place-content-center flex md:items-center md:justify-around pt-32;
   }
   .main--sec-container {
-    @apply md:flex md:items-center md:justify-around max-w-[360px] md:max-w-[2008px];
+    @apply block max-w-[360px] md:max-w-[500px];
+  }
+  .vmodal--barber-option {
+    @apply flex justify-start items-center gap-4 w-full border-b py-5;
   }
 </style>
   
