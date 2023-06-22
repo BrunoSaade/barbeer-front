@@ -1,6 +1,6 @@
 <template lang="pug">
 VModal(
-  :class="[{'hidden': !mustShowModal}]" 
+  v-show="mustShowModal"
   @closeModal="mustShowModal = !mustShowModal"
 )
   PrivacyPolicie
