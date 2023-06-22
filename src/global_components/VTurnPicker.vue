@@ -55,7 +55,7 @@ import { mapMutations } from 'vuex';
 </script>
 <style scoped>
 .vturn-picker--row {
-  @apply flex bg-grey-2 rounded-xl h-12 items-center p-1;
+  @apply flex bg-grey-2 rounded-xl h-12 items-center p-1 justify-center;
 }
 .vturn-picker--card {
   @apply bg-grey-2 hover:bg-grey-3 w-32 h-8 rounded-lg text-center flex justify-center items-center;
