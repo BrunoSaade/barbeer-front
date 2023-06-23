@@ -6,9 +6,18 @@
         :src="`https://ui-avatars.com/api/?name=${name}&background=17241D&color=FFFFFFBF&rounded=true&size=60`"
       )
     .navbar--desktop-items  
-      p.navbar--desktop-menu-item(@click="handleMain") Início
-      p.navbar--desktop-menu-item(@click="handleProfile") Perfil 
-      p.navbar--desktop-menu-item Agendamentos
+      p.navbar--desktop-menu-item(
+        @click="handleMain"
+        :class="{'!text-primary-0' : isCurrentRoute('/logged/main')}"
+      ) Início
+      p.navbar--desktop-menu-item(
+        @click="handleProfile"
+        :class="{'!text-primary-0' : isCurrentRoute('/logged/profile')}"
+      ) Perfil 
+      p.navbar--desktop-menu-item(
+        @click="handleBooking"
+        :class="{'!text-primary-0' : isCurrentRoute('/logged/booking')}"
+      ) Agendamentos
       p.navbar--desktop-menu-item(@click="handleLogout") Sair
   .navbar--mobile(v-if="getIsMenuMobileOpen")
     .vnavbar--mobile-background(@click="handleMenuMobileOpen")
@@ -22,14 +31,14 @@
       .navbar--mobile-container
         .navbar--mobile-content
           .navbar--mobile-content-action(@click="handleMain")
-            icon.icon--action(icon='fa-solid fa-house')
-            p Início
+            icon.icon--action(icon='fa-solid fa-house' :class="{'!text-primary-0' : isCurrentRoute('/logged/main')}")
+            p(:class="{'!text-primary-0' : isCurrentRoute('/logged/main')}") Início
           .navbar--mobile-content-action(@click="handleProfile")
-            icon.icon--action(icon='fa-solid fa-pen')
-            p Perfil
-          .navbar--mobile-content-action
-            icon.icon--action(icon='fa-solid fa-book') 
-            p Agendamentos
+            icon.icon--action(icon='fa-solid fa-pen' :class="{'!text-primary-0' : isCurrentRoute('/logged/profile')}")
+            p(:class="{'!text-primary-0' : isCurrentRoute('/logged/profile')}") Perfil
+          .navbar--mobile-content-action(@click="handleBooking")
+            icon.icon--action(icon='fa-solid fa-book' :class="{'!text-primary-0' : isCurrentRoute('/logged/booking')}") 
+            p(:class="{'!text-primary-0' : isCurrentRoute('/logged/booking')}") Agendamentos
           .navbar--mobile-content-action(@click="handleLogout")
             icon.icon--action(icon='fa-solid fa-right-from-bracket') 
             p Sair
@@ -79,6 +88,13 @@
         this.setIsMenuMobileOpen(false)
         this.$router.push('/logged/profile')
       },
+      isCurrentRoute(route) {
+        return this.$route.path === route
+      },
+      handleBooking() {
+        this.setIsMenuMobileOpen(false)
+        this.$router.push('/logged/booking')
+      }
     },
   }
 </script>
