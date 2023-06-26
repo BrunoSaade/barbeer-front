@@ -15,7 +15,8 @@ module.exports = {
         grey: ['#FFFFFFBF', '#000000E5', '#ACACAC', '#D9D9D9'],
         orange: ['#AF5118', '#AF7240'],
         success: ["#00be70"],
-        error: ['#eb0043']
+        error: ['#eb0043'],
+        info: ['#002A95']
       }
     },
   },
